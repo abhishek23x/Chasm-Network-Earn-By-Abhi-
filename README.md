@@ -74,3 +74,36 @@ curl -X POST \
      $WEBHOOK_URL
 ```
 - Done !!
+
+👉🏻NOW UPGRADE NODE TO v0.0.5 { UPDATE }
+
+
+- Stop node 1st 
+```bash
+docker stop scout
+```
+- Next command
+```bash
+docker rm scout
+```
+- Next command
+```bash
+docker image prune
+```
+- Next command
+```bash
+docker pull chasmtech/chasm-scout:latest
+```
+- Start the Scout container
+```bash
+docker run -d --restart=always --env-file ./.env -p 3001:3001 --name scout chasmtech/chasm-scout
+```
+- View the container 
+```bash
+docker logs scout
+```
+- Test ; Response should be OK
+```bash
+curl localhost:3001
+```
+---
